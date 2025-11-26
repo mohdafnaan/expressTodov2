@@ -1,0 +1,13 @@
+[
+    {
+        "id": "7e60ce68-d1d9-4187-ac2f-ccfc2a8487a9",
+        "name": "afnaan",
+        "email": "mohdafnaan833@gmail.com",
+        "age": 20,
+        "phone": 9573503729,
+        "password": "$2b$10$2hsK5Zs92PbC1XF7/PueIu/IONOpimEp34ImwCL0Vge20EVg.eCPG",
+        "isVerified": false,
+        "task": [],
+        "accountCreatedAt": "2025-11-26T16:22:38.907Z"
+    }
+]

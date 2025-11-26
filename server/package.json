@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "type" : "module",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node app.js"
+  },
+  "keywords": [],
+  "author": "mohammed afnaan",
+  "license": "ISC",
+"dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "uuid": "^13.0.0"
+  }
+}

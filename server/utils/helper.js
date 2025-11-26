@@ -1,0 +1,14 @@
+import fs from "fs/promises";
+
+const dbPath = "/home/afnaan/expressTodov2/server/data.json";
+
+async function readDB(){
+    let DB = await fs.readFile(dbPath,"utf-8");
+    return JSON.parse(DB);
+}
+
+async function writeDB(content){
+    await fs.writeFile(dbPath,JSON.stringify(content,null,4))
+}
+
+export{readDB,writeDB};
