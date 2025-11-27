@@ -85,4 +85,22 @@ router.delete("/deletetask/:id",async (req,res)=>{
         res.status(500).json({msg : error})
     }
 })
+// update task with id
+router.put("/updatetask/:id",async (req,res)=>{
+    try {
+        let DB = await readDB();
+        let existingUser = DB.find(u=>u.id === req.user.id);
+        let Tid = req.params.id;
+        if(!Tid){
+            return res.status(404).json({msg : "task not found"})
+        }
+        let updatingTask = existingUser.task.find(u=>u.id === Tid);
+        Object.assign(updatingTask,req.body);
+        await writeDB(DB);
+        res.status(200).json({msg : "task updated"})
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({msg : error})
+    }
+})
 export default router;
