@@ -11,4 +11,9 @@ async function writeDB(content){
     await fs.writeFile(dbPath,JSON.stringify(content,null,4))
 }
 
-export{readDB,writeDB};
+
+function OTPgenerator() {
+    return  Math.floor(Math.random() * (9999-1000)+1000);
+}
+
+export{readDB,writeDB,OTPgenerator};
