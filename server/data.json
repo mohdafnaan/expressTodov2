@@ -1,32 +1,14 @@
 [
     {
-        "id": "7e60ce68-d1d9-4187-ac2f-ccfc2a8487a9",
-        "name": "afnaan",
-        "email": "mohdafnaan833@gmail.com",
+        "id": "254f172b-eaf5-4e17-b8da-f68d252d574e",
+        "name": "mohd afnaan",
+        "email": "mohdfnaan833@gmail.com",
         "age": 20,
         "phone": 9573503729,
-        "password": "$2b$10$2hsK5Zs92PbC1XF7/PueIu/IONOpimEp34ImwCL0Vge20EVg.eCPG",
+        "otp": 9695,
+        "password": "$2b$10$J9uprZPcYtPBf0fVIYwzDuBRPXYHmE7BuCyrzD/2vMXhMagf1/79K",
         "isVerified": false,
-        "task": [
-            {
-                "id": "d314dd25-567c-4989-a70e-7ee0b80b61a6",
-                "taskName": "coding",
-                "description": "8 hours of gaming today",
-                "startedAT": "2025-11-27T17:03:37.972Z",
-                "deadline": "tomorrow 5pm"
-            }
-        ],
-        "accountCreatedAt": "2025-11-26T16:22:38.907Z"
-    },
-    {
-        "id": "579552e0-61eb-441a-a4d9-a0a130722eed",
-        "name": "zoheb uddin",
-        "email": "sayyedzohebuddin61859@gmail.com",
-        "age": 19,
-        "phone": 9550612132,
-        "password": "$2b$10$v.3J.8NMgzyx8cE/4kqin.IlclTif3zISIxZy3guOy/k6PlHYky1y",
-        "isVerified": true,
         "task": [],
-        "accountCreatedAt": "2025-11-27T16:00:56.814Z"
+        "accountCreatedAt": "2025-11-28T08:30:27.717Z"
     }
 ]
