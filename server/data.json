@@ -2,12 +2,11 @@
     {
         "id": "254f172b-eaf5-4e17-b8da-f68d252d574e",
         "name": "mohd afnaan",
-        "email": "mohdfnaan833@gmail.com",
+        "email": "mohdafnaan833@gmail.com",
         "age": 20,
         "phone": 9573503729,
-        "otp": 9695,
-        "password": "$2b$10$J9uprZPcYtPBf0fVIYwzDuBRPXYHmE7BuCyrzD/2vMXhMagf1/79K",
-        "isVerified": false,
+        "password": "$2b$10$oyZB0izf9GURPLdKPQx.repYONqDoGMhQQjQmub4E2xGlWt8F/eKq",
+        "isVerified": true,
         "task": [],
         "accountCreatedAt": "2025-11-28T08:30:27.717Z"
     },
