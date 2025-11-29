@@ -4,10 +4,12 @@ import sendMail from "../../utils/sendEmail.js"
 import bcrypt from "bcrypt"
 import {v4 as uuid} from "uuid";
 import encrypt from "../../utils/token.js";
+import { registervalidation,loginValidation,otpValidation,errorvalidation } from "../../validators/valid.js";
+
 
 const router = express.Router();
 
-router.post("/register",async (req,res)=>{
+router.post("/register",registervalidation,errorvalidation,async (req,res)=>{
     try {
         let DB = await readDB();
         let {name,email,age,phone,password} = req.body;
@@ -38,7 +40,7 @@ router.post("/register",async (req,res)=>{
     }
 })
 
-router.post("/otpVerifiacation",async(req,res)=>{
+router.post("/otpVerifiacation",otpValidation,errorvalidation,async(req,res)=>{
     try {
         let DB = await readDB();
         let otp = req.body.otp;
@@ -60,7 +62,7 @@ router.post("/otpVerifiacation",async(req,res)=>{
     }
 })
 
-router.post("/login",async (req,res)=>{
+router.post("/login",loginValidation,errorvalidation,async (req,res)=>{
     try {
         let existingData = await readDB()
         let incomingEmail = req.body.email;
