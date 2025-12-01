@@ -1,16 +1,5 @@
 [
     {
-        "id": "254f172b-eaf5-4e17-b8da-f68d252d574e",
-        "name": "mohd afnaan",
-        "email": "mohdafnaan833@gmail.com",
-        "age": 20,
-        "phone": 9573503729,
-        "password": "$2b$10$oyZB0izf9GURPLdKPQx.repYONqDoGMhQQjQmub4E2xGlWt8F/eKq",
-        "isVerified": true,
-        "task": [],
-        "accountCreatedAt": "2025-11-28T08:30:27.717Z"
-    },
-    {
         "id": "9f94f8b1-7790-488b-8389-bb751576cd8b",
         "name": "zoheb",
         "email": "sayyed.zohebuddin@gmail.com",
@@ -20,5 +9,18 @@
         "isVerified": true,
         "task": [],
         "accountCreatedAt": "2025-11-29T17:21:33.821Z"
+    },
+    {
+        "id": "73cd30b2-a3db-4389-adad-89350164d4c2",
+        "name": "afnaan",
+        "email": "mohdafnaan833@gmail.com",
+        "age": "20",
+        "phone": "9573503729",
+        "password": "$2b$10$k0atlTVPFxRo6v8EqnLFAu8LFGxi.Zxsg4erYgcELrrVNio0Hk7A.",
+        "isVerified": true,
+        "count": 0,
+        "isFreeze": false,
+        "task": [],
+        "accountCreatedAt": "2025-12-01T06:02:22.417Z"
     }
 ]

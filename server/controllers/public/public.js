@@ -5,7 +5,7 @@ import bcrypt from "bcrypt"
 import {v4 as uuid} from "uuid";
 import encrypt from "../../utils/token.js";
 import { registervalidation,loginValidation,otpValidation,errorvalidation } from "../../validators/valid.js";
-import Mail from "nodemailer/lib/mailer/index.js";
+import BAN from "../../admin/admin.js"
 
 
 const router = express.Router();
@@ -28,6 +28,8 @@ router.post("/register",registervalidation,errorvalidation,async (req,res)=>{
             otp : OTPgenerator(),
             password :await bcrypt.hash(password,10),
             isVerified : false,
+            count : 0,
+            isFreeze : false,
             task : [],
             accountCreatedAt : new Date().toISOString()
         }
@@ -67,16 +69,32 @@ router.post("/login",loginValidation,errorvalidation,async (req,res)=>{
     try {
         let existingData = await readDB()
         let incomingEmail = req.body.email;
+        let incomingPass = req.body.password
         let user = existingData.find(x=>x.email === incomingEmail);
+        let passMatch = await bcrypt.compare(incomingPass,user.password)
+        let jwtUser = {user:user.email,user:user.phone}
         if(!user){
             return res.status(404).json({msg : "user not found"})
         }
-            if(await bcrypt.compare(req.body.password,user.password)){
-                let sessionKey = await encrypt(user)
-                res.status(200).json({msg : "loggedin sucessfully",sessionKey : sessionKey})
-            } else {
-                res.status(401).json({msg : "password is invalid"})
-            }
+        if(user.isFreeze === true){
+            return res.status(401).json({msg : "your account is freeze for 1 min. Try again after 1 mins"})
+        }
+        
+        if(passMatch){
+        let sessionKey = await encrypt(jwtUser)
+        user.count = 0;
+        await writeDB(existingData)
+        res.status(200).json({msg : "loggedin sucessfully",sessionKey : sessionKey})
+        } else {
+            user.count ++;
+            await writeDB(existingData)
+            if(user.count == 5){
+            await BAN(incomingEmail);
+            return res.status(500).json({msg : "your account has been freezed for 1 min"})
+        }
+        return res.status(401).json({msg : "password is invalid"})
+        }
+        
          
     } catch (error) {
         console.log(error);
